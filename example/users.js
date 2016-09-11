@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, EmailInput, DateInput, ReferenceManyField } from 'admin-on-rest/mui';
+import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, EmailInput, DateInput, ReferenceManyField, ReferenceField } from 'admin-on-rest/mui';
 
 export UserIcon from 'material-ui/svg-icons/social/person';
 
@@ -15,6 +15,9 @@ export const UserList = (props) => (
     <List {...props} filter={UserFilter}>
         <Datagrid>
         <TextField label="id" source="id" />
+            <ReferenceField label="role" source="role_id" reference="roles">
+                <TextField source="title" />
+            </ReferenceField>
 	
             <TextField label="username" source="username" />
             <TextField label="fullname" source="fullname" />
