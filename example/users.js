@@ -1,12 +1,13 @@
 import React from 'react';
-import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, DateInput, ReferenceManyField } from 'admin-on-rest/mui';
+import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, EmailInput, DateInput, ReferenceManyField } from 'admin-on-rest/mui';
 
 export UserIcon from 'material-ui/svg-icons/social/person';
 
 const UserFilter = (props) => (
+
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
-        <TextInput label="Title" source="title" />
+        <TextInput label="Username" source="username" />
     </Filter>
 );
 
@@ -14,44 +15,31 @@ export const UserList = (props) => (
     <List {...props} filter={UserFilter}>
         <Datagrid>
             <TextField label="id" source="id" />
-            <TextField label="title" source="title" />
-            <DateField label="published_at" source="published_at" />
-            <TextField label="average_note" source="average_note" />
-            <TextField label="views" source="views" />
+            <TextField label="username" source="username" />
+            <TextField label="fullname" source="fullname" />
+            <TextField label="email" source="email" />
             <EditButton />
         </Datagrid>
     </List>
 );
 
-const UserTitle = ({ record }) => {
-    return <span>User {record ? `"${record.title}"` : ''}</span>;
+const UserUsername = ({ record }) => {
+    return <span>User {record ? `"${record.username}"` : ''}</span>;
 };
 
 export const UserEdit = (props) => (
-    <Edit title={UserTitle} {...props}>
+    <Edit username={UserUsername} {...props}>
         <DisabledInput label="Id" source="id" />
-        <TextInput label="Title" source="title" />
-        <TextInput label="Teaser" source="teaser" options={{ multiLine: true }} />
-        <LongTextInput label="Body" source="body" />
-        <DateInput label="Publication date" source="published_at" />
-        <TextInput label="Average note" source="average_note" />
-        <ReferenceManyField label="Comments" reference="comments" target="post_id">
-            <Datagrid selectable={false}>
-                <TextField source="body" />
-                <DateField source="created_at" />
-                <EditButton />
-            </Datagrid>
-        </ReferenceManyField>
-        <DisabledInput label="Nb views" source="views" />
+        <TextInput label="Username" source="username" />
+        <TextInput label="Full Name" source="fullname" options={{ multiLine: true }} />
+        <LongTextInput label="Email" source="email" />
     </Edit>
 );
 
 export const UserCreate = (props) => (
     <Create {...props}>
-        <TextInput label="Title" source="title" />
-        <TextInput label="Teaser" source="teaser" options={{ multiLine: true }} />
-        <LongTextInput label="Body" source="body" />
-        <DateInput label="Publication date" source="published_at" />
-        <TextInput label="Average note" source="average_note" />
+        <TextInput label="Username" source="username" />
+        <TextInput label="Full Name" source="fullname" options={{ multiLine: true }} />
+        <LongTextInput label="Email" source="email" />
     </Create>
 );
