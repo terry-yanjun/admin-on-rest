@@ -24,6 +24,11 @@ export const UserList = (props) => (
     </List>
 );
 
+//        <ReferenceManyField label="roles" reference="userroles" target="user_id">
+//                <TextField source="role" />
+//        </ReferenceManyField>
+
+
 const UserUsername = ({ record }) => {
     return <span>User {record ? `"${record.username}"` : ''}</span>;
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, EmailInput, DateInput, ReferenceManyField } from 'admin-on-rest/mui';
 
-export RoleIcon from 'material-ui/svg-icons/social/person';
+export RoleIcon from 'material-ui/svg-icons/social/public';
 
 const RoleFilter = (props) => (
 
