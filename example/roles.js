@@ -36,7 +36,6 @@ export const RoleEdit = (props) => (
 
 export const RoleCreate = (props) => (
     <Create {...props}>
-        <DisabledInput label="Id" source="id" />
         <TextInput label="Title" source="title" />
         <LongTextInput label="Description" source="desc" />
     </Create>

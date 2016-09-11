@@ -1,6 +1,7 @@
 export default {
     "users":[{"id":1,"cellphone":"","email":"test@gmail.com","enabled":1,"fullname":"Test","username":"test"},{"id":2,"cellphone":"","email":"yanjzhou@gmail.com","enabled":1,"fullname":"Yanjun Zhou","username":"yanjzhou"},{"id":3,"cellphone":"","email":"admin@gmail.com","enabled":1,"fullname":"Admin","username":"admin"}],
     "roles":[{"id":1,"title":"ROLE_ADMIN","enabled":1,"desc":"Admin Role"},{"id":2,"title":"ROLE_USER","enabled":1,"desc":"User Role. Can only manage devices"}],
+    "userroles":[{"id":1,"user_id":1,"role":"ROLE_ADMIN"},{"id":2,"user_id":2,"role":"ROLE_ADMIN"},{"id":3,"user_id":3,"role":"ROLE_ADMIN"}],
   "devices": [
     {
       "id": 1,
