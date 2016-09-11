@@ -1,10 +1,9 @@
 import React from 'react';
-import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, EmailInput, DateInput, ReferenceManyField, ReferenceField } from 'admin-on-rest/mui';
+import { List, Filter, Edit, Create, Datagrid, DateField, TextField, EditButton, DisabledInput, TextInput, LongTextInput, EmailInput, PasswordInput, DateInput, ReferenceManyField, ReferenceField, ReferenceInput,SelectInput} from 'admin-on-rest/mui';
 
 export UserIcon from 'material-ui/svg-icons/social/person';
 
 const UserFilter = (props) => (
-
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
         <TextInput label="Username" source="username" />
@@ -42,6 +41,10 @@ export const UserEdit = (props) => (
         <TextInput label="Username" source="username" />
         <TextInput label="Full Name" source="fullname" options={{ multiLine: true }} />
         <LongTextInput label="Email" source="email" />
+	<ReferenceInput label="Role" source="role_id" reference="roles">
+            <SelectInput optionText="title" />
+        </ReferenceInput>
+        <PasswordInput label="Password" source="password" />
     </Edit>
 );
 
@@ -50,5 +53,8 @@ export const UserCreate = (props) => (
         <TextInput label="Username" source="username" />
         <TextInput label="Full Name" source="fullname" options={{ multiLine: true }} />
         <LongTextInput label="Email" source="email" />
+        <ReferenceInput label="Role" source="role_id" reference="roles" allowEmpty>
+            <SelectInput optionText="title" />
+        </ReferenceInput>    
     </Create>
 );
